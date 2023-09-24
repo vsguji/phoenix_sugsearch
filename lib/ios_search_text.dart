@@ -83,7 +83,7 @@ class IOSSearchText extends StatefulWidget {
   final OnTextClear? onTextClear;
 
   /// 用于控制清除 Icon 和右侧 Action 的显示与隐藏。等其他复杂的操作。
-  final BrnSearchTextController? searchController;
+  final SearchTextController? searchController;
 
   const IOSSearchText({
     Key? key,
@@ -125,16 +125,16 @@ class _SearchTextState extends State<IOSSearchText> {
   FocusNode? focusNode;
   TextEditingController? textEditingController;
   BoxBorder? border;
-  BrnSearchTextController? searchTextController;
+  SearchTextController? searchTextController;
 
-  BrnSearchTextController? tmpController;
+  SearchTextController? tmpController;
 
   @override
   void initState() {
     super.initState();
 
     if (widget.searchController == null) {
-      tmpController = BrnSearchTextController();
+      tmpController = SearchTextController();
     }
     searchTextController = widget.searchController ?? tmpController;
     searchTextController!.addListener(() {
@@ -323,7 +323,7 @@ class _SearchTextState extends State<IOSSearchText> {
 }
 
 /// 搜索框控制类，用于控制 清除 icon（x）、取消按钮的展示 隐藏
-class BrnSearchTextController extends ChangeNotifier {
+class SearchTextController extends ChangeNotifier {
   bool _isClearShow = true;
   bool _isActionShow = false;
 

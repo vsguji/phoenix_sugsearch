@@ -1,6 +1,6 @@
 name: phoenix_sugsearch
 description: phoenix 将做为企业级基础组件:Sugsearch组件,提供项目支持。
-version: 1.0.0
+version: 1.0.1
 homepage: 'https://github.com/vsguji/phoenix_sugsearch.git'
 
 environment:
