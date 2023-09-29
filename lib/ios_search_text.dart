@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:phoenix_base/phoenix.dart';
 
+import 'extension/sugsearch_assets.dart';
+
 /// 搜索框内容变化回调
 typedef OnSearchTextChange = void Function(String content);
 
@@ -198,7 +200,8 @@ class _SearchTextState extends State<IOSSearchText> {
                           padding: const EdgeInsets.only(left: 14),
                           child: Center(
                             child: PhoenixTools.getAssetSizeImage(
-                                BaseAsset.iconSearch, 16, 16),
+                                SugSearchAssets.iconSearch, 16, 16,
+                                package: 'phoenix_sugsearch'),
                           ),
                         ),
                     Expanded(
@@ -281,8 +284,8 @@ class _SearchTextState extends State<IOSSearchText> {
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 12.0),
                             child: PhoenixTools.getAssetImage(
-                              BaseAsset.iconDeleteText,
-                            ),
+                                SugSearchAssets.iconDeleteText,
+                                package: 'phoenix_sugsearch'),
                           ),
                         ),
                       ),
